@@ -1,3 +1,10 @@
 page-home {
-
+    .contentArea {
+        background-image: url('../assets/img/bg_inicio.png');
+        -webkit-background-image: url('../assets/img/bg_inicio.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: 0 5px;
+      }
+     
 }
