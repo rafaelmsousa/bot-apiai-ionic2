@@ -5,7 +5,8 @@ import { TextToSpeech } from '@ionic-native/text-to-speech';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { MinhaConta } from '../pages/list/list';
+import { Transferencias } from './../pages/transferencias/transferencias';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -14,7 +15,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    MinhaConta,
+    Transferencias
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    MinhaConta,
+    Transferencias
   ],
   providers: [
     TextToSpeech, 

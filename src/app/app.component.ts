@@ -1,10 +1,11 @@
+import { Transferencias } from './../pages/transferencias/transferencias';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { MinhaConta } from '../pages/list/list';
 
 declare var ApiAIPlugin:any;
 
@@ -24,7 +25,8 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'Minha Conta', component: MinhaConta },
+      { title: 'Transferências', component: Transferencias }
     ];
 
   }
@@ -41,10 +43,10 @@ export class MyApp {
             lang: "pt-BR" // set lang tag from list of supported languages
         },
         function(result) { 
-          console.log("ApiAIPlugin iniciado com sucesso!")
+          console.log("----> ApiAIPlugin iniciado com sucesso!")
         },
         function(error) { 
-          alert("Erro "+ error)
+          alert("----> Erro APIAIPlugin Init: "+ error)
          }
       );
 

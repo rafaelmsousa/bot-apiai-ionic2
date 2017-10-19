@@ -9,19 +9,19 @@
   <ion-navbar>
       <ion-title>Comando de Voz</ion-title>
       <ion-buttons end>
-      <button ion-button (click)="closeModal()"><ion-icon name="close"></ion-icon>Fechar</button>
+      <button ion-button large (click)="closeModal()" ><ion-icon name="close"></ion-icon></button>
       </ion-buttons>
   </ion-navbar>
   
   </ion-header>
-  <ion-content padding>
-    <p>Diga o que deseja, por exemplo:</p>
-    <p>"Quero visualizar meu extrato"</p>
-    <p>
-      <span *ngIf="isRecording"><ion-icon name="recording"></ion-icon> Gravando...</span>
-    </p>
+  <ion-content text-center>
+    <br>
+    
     <p>
       <ion-spinner name="dots" *ngIf="isRecording"></ion-spinner>
+      {{retornoServidor}}<br>
     </p>
-    <p>{{retornoServidor}}</p>
+    
+    <button (click)="sendVoice();" ion-button round outline large color="blue"><ion-icon name="mic"></ion-icon></button>   
+
   </ion-content>
