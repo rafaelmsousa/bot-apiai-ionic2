@@ -7,6 +7,14 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-
-</ion-content>
+<ion-content>
+    <ion-list>
+      <button ion-item *ngFor="let item of itens" (click)="itemTapped($event, item.titulo)">
+        <ion-icon [name]="item.icone" item-left></ion-icon>
+        {{item.titulo}}
+      </button>
+    </ion-list>
+    <div *ngIf="itemSelecionado" padding>
+      Você selecionou <b>{{itemSelecionado}}</b>
+    </div>
+  </ion-content>
