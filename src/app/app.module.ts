@@ -1,7 +1,11 @@
+import { Pagamentos } from './../pages/pagamentos/pagamentos';
+import { LoginPage } from './../pages/login/login';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
+import { HttpModule } from '@angular/http';
+
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -16,10 +20,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     MinhaConta,
-    Transferencias
+    Transferencias,
+    LoginPage,
+    Pagamentos
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -27,7 +34,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     MinhaConta,
-    Transferencias
+    Transferencias,
+    LoginPage,
+    Pagamentos
   ],
   providers: [
     TextToSpeech, 

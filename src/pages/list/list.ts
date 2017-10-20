@@ -6,32 +6,32 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'list.html'
 })
 export class MinhaConta {
-  selectedItem: any;
-  icons: string[];
-  items: Array<{title: string, note: string, icon: string}>;
+  itemSelecionado: any;
+  itens: Array<{titulo: string, icone: string}>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    // If we navigated to this page, we will have an item available as a nav param
-    this.selectedItem = navParams.get('item');
+    //Recebe o parametro de navegação do Submenu
+    this.itemSelecionado = navParams.get('MinhaConta');
 
-    // Let's populate this page with some filler content for funzies
-    this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
-    'american-football', 'boat', 'bluetooth', 'build'];
-
-    this.items = [];
-    for (let i = 1; i < 11; i++) {
-      this.items.push({
-        title: 'Item ' + i,
-        note: 'This is item #' + i,
-        icon: this.icons[Math.floor(Math.random() * this.icons.length)]
-      });
-    }
+    this.itens = [];
+    this.itens.push({
+        titulo: "Saldo",
+        icone: 'cash'
+    });
+    this.itens.push({
+      titulo: "Extrato",
+      icone: 'stats'
+    });
+    this.itens.push({
+      titulo: "Lançamentos Futuros",
+      icone: 'trending-down'
+    });
+    
   }
 
   itemTapped(event, item) {
-    // That's right, we're pushing to ourselves!
     this.navCtrl.push(MinhaConta, {
-      item: item
+      MinhaConta: item
     });
   }
 }

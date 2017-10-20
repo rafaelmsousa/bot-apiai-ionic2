@@ -4,7 +4,23 @@ page-home {
         -webkit-background-image: url('../assets/img/bg_inicio.png');
         background-repeat: no-repeat;
         background-size: 100% 100%;
-        background-position: 0 0px;
-      }
+        background-position: -4px 0px;
+    }
+
+    .item-md {
+        background: transparent;
+    }
+    
+    .item-ios {
+        background: transparent;
+    }
+
+    ion-content.has-refresher > .scroll-content{
+        background: transparent;
+    }
+
+    .card, .card-md{
+        background-color: rgb(133, 181, 202);
+    }
      
 }

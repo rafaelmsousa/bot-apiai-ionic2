@@ -1,4 +1,4 @@
-import { Transferencias } from './../pages/transferencias/transferencias';
+import { Pagamentos } from './../pages/pagamentos/pagamentos';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -6,6 +6,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { MinhaConta } from '../pages/list/list';
+import { LoginPage } from './../pages/login/login';
+import { Transferencias } from './../pages/transferencias/transferencias';
 
 declare var ApiAIPlugin:any;
 
@@ -15,18 +17,21 @@ declare var ApiAIPlugin:any;
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = LoginPage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, icon: string, component: any }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'Minha Conta', component: MinhaConta },
-      { title: 'Transferências', component: Transferencias }
+      { title: 'Home', icon: 'home', component: HomePage},
+      { title: 'Minha Conta', icon: 'cash', component: MinhaConta },
+      { title: 'Pagamentos', icon: 'barcode', component: Pagamentos},
+      { title: 'Transferências', icon: 'redo', component: Transferencias }, 
+      { title: 'Sair', icon: 'log-out', component: LoginPage }
+      
     ];
 
   }

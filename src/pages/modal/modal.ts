@@ -1,3 +1,4 @@
+import { Pagamentos } from './../pagamentos/pagamentos';
 import { Transferencias } from './../transferencias/transferencias';
 import { MinhaConta } from './../list/list';
 import { HomePage } from './../home/home';
@@ -33,7 +34,8 @@ export class ModalPage {
     this.pages = [
       { title: 'menu.Home', component: HomePage },
       { title: 'menu.MinhaConta', component: MinhaConta },
-      { title: 'menu.Transferencias', component: Transferencias }
+      { title: 'menu.Transferencias', component: Transferencias },
+      { title: 'menu.Pagamentos', component: Pagamentos }
     ];
         
   }
@@ -89,8 +91,9 @@ export class ModalPage {
               console.log('----> TTS Speak Retorno Successo');
               //se tiver uma acao no retorno entao redireciona para a pagina
               let responseAction:string = response.result.action;
+              let responseParameters:any = response.result.parameters;
               if(responseAction.length != 0 && responseAction != "" && responseAction.indexOf("menu") != -1){
-                self.openPage(responseAction);
+                self.openPage(responseAction, responseParameters);
               }
             })
             .catch((reason: any) => {
@@ -121,9 +124,9 @@ export class ModalPage {
     loader.present();
   }
 
-  openPage(pageTitle:string) {
+  openPage(pageTitle:string, parametros:any) {
     
-    this.navCtrl.push(this.pages.find(page => page.title===pageTitle).component);
+    this.navCtrl.push(this.pages.find(page => page.title===pageTitle).component, parametros);
     //this.closeModal();
   }
 

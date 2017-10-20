@@ -1,0 +1,24 @@
+page-login {
+    .contentArea{
+        //background: url("../assets/img/sprites.png") no-repeat -112px 0;
+        background-color: rgb(0, 153, 221);
+    }
+
+    .bgCaixa{
+        background-image: url('../assets/img/caixa_logo.png');
+        -webkit-background-image: url('../assets/img/caixa_logo.png');
+    }
+
+    .frmLogin{
+        //margin-top: 50px;
+        background-color: rgb(133, 181, 202);
+        //padding: 20px 5px 15px 5px;
+    }
+    .item-md {
+        background: transparent;
+    }
+    .item-ios {
+        background: transparent;
+    }
+
+}

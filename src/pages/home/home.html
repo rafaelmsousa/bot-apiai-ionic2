@@ -7,14 +7,47 @@
 </ion-header>
 
 <ion-content class="contentArea">
-  <p>
-    &nbsp;
-  </p>
-
-  <p>
-    Bem vindo à Caixa, <strong>Rafael</strong>.  
-  </p>
-
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content>
+      </ion-refresher-content>
+    </ion-refresher>
+    <ion-list>
+        <ion-item no-lines>
+          <ion-avatar item-left>
+            <ion-icon name="person"></ion-icon>
+            Rafael Moraes de Sousa
+          </ion-avatar>
+          <p>Saldo Disponível</p>
+          <ion-spinner name="circles" *ngIf="isLoading"></ion-spinner>
+          {{saldo}}
+        </ion-item>
+        <ion-item>
+            <ion-avatar item-left>
+              <ion-icon name="bookmarks"></ion-icon>
+              Meus Favoritos
+            </ion-avatar>
+          </ion-item>
+          <ion-card>
+            <ion-card-header>
+              <ion-icon name="barcode"></ion-icon>
+              Pagamentos
+            </ion-card-header>
+            <ion-card-content>
+              <ion-icon name="card"></ion-icon>
+              Fatura do Cartão
+            </ion-card-content>
+          </ion-card>
+          <ion-card>
+              <ion-card-header>
+                <ion-icon name="redo"></ion-icon>
+                Transferências
+              </ion-card-header>
+              <ion-card-content>
+                <ion-icon name="albums"></ion-icon>
+                Boletos e Títulos
+              </ion-card-content>
+            </ion-card>
+      </ion-list>
   <ion-fab right bottom>
     <button (click)="openVoiceModal();" ion-fab color="blue"><ion-icon name="mic"></ion-icon></button>   
   </ion-fab>
